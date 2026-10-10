@@ -1,5 +1,13 @@
 name: Hello
-on: push
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      greeting:
+        type: string
+        default: 'hello'
+        required: true
+        description: A cheerful word
 jobs:
   hello_:
     runs-on: ubuntu-latest
@@ -8,12 +16,3 @@ jobs:
       - run: |
           git log -1
           tree -a .
-on:
-  workflow_dispatch:
-    inputs:
-      greeting:
-        type: string
-        default: 'hello'
-        required: true
-        description: A cheerful word
-
