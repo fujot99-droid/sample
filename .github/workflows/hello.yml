@@ -1,4 +1,5 @@
 name: Hello
+run-name: Run by @${{ACTOR}}
 on:
   push:
   workflow_dispatch:
@@ -8,6 +9,8 @@ on:
         default: 'hello'
         required: true
         description: A cheerful word
+permissions:
+  contents: read
 jobs:
   hello_:
     runs-on: ubuntu-latest
