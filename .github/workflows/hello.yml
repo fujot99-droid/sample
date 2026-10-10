@@ -8,4 +8,12 @@ jobs:
       - run: |
           git log -1
           tree -a .
+on:
+  workflow_dispatch:
+    inputs:
+      greeting:
+        type: string
+        default: 'hello'
+        required: true
+        description: A cheerful word
 
