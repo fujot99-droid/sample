@@ -24,6 +24,7 @@ jobs:
       - env:
           RESULT: ${{steps.source.outputs.test}}
         run: echo "${RESULT}"
+      - run: gh pr 
   dump:
     if: ${{vars.ENV == true}}
     runs-on: ubuntu-latest
