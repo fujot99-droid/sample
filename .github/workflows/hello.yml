@@ -1,5 +1,5 @@
 name: Hello
-run-name: Run by @${{GITHUB_ACTOR}}
+run-name: Run by @${{github.actor}}
 on:
   push:
   workflow_dispatch:
@@ -20,6 +20,7 @@ jobs:
           git log -1
           tree -a .
   dump:
+    if: ${{vars.ENV == true}}
     runs-on: ubuntu-latest
     # ジョブレベルの env で使えるコンテキストのみ
     env:
@@ -29,9 +30,8 @@ jobs:
       I: ${{ toJSON(strategy) }}
       J: ${{ toJSON(matrix) }}
       K: ${{ toJSON(needs) }}
-      L: ${{ toJSON(inputs) }}
+      L: ${{ toJSON(inputs) }}ﬁ
     steps:
-      if: ${{vars.ENV == true}}
       - run: echo "${A}"
       # env / job / steps / runner はステップレベルでのみ参照可能
       - run: echo "${B}"
