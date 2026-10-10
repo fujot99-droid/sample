@@ -1,5 +1,5 @@
 name: Hello
-run-name: Run by @${{ACTOR}}
+run-name: Run by @${{GITHUB_ACTOR}}
 on:
   push:
   workflow_dispatch:
@@ -31,6 +31,7 @@ jobs:
       K: ${{ toJSON(needs) }}
       L: ${{ toJSON(inputs) }}
     steps:
+      if: ${{vars.ENV == true}}
       - run: echo "${A}"
       # env / job / steps / runner はステップレベルでのみ参照可能
       - run: echo "${B}"
