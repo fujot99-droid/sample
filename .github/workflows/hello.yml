@@ -1,0 +1,10 @@
+name: Hello
+on: push
+jobs:
+  hello_:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          git log -1
+          tree -a .
+      - uses: actions/checkout@v4
