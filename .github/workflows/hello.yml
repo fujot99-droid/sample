@@ -16,9 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - id: source
+        run: echo "test=Hello" >> "${GITHUB_OUTPUT}"
       - run: |
           git log -1
           tree -a .
+      - env:
+          RESULT: ${{steps.source.outputs.test}}
+        run: echo "${RESULT}"
   dump:
     if: ${{vars.ENV == true}}
     runs-on: ubuntu-latest
@@ -48,7 +53,13 @@ jobs:
         env:
           G: ${{ toJSON(runner) }}
       - run: echo "${H}"
+        if: ${{failure()}}
+      - run: echo "${H}"
+        if: ${{cancelled()}}
       - run: echo "${I}"
       - run: echo "${J}"
+        if: ${{always()}}
       - run: echo "${K}"
+        if: ${{success()}}
       - run: echo "${L}"
+        if: ${{contains(github.run_id, '1')}}
