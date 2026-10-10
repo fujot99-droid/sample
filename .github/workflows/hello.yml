@@ -4,7 +4,8 @@ jobs:
   hello_:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: |
           git log -1
           tree -a .
-      - uses: actions/checkout@v4
+

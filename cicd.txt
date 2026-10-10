@@ -2,3 +2,4 @@ gh repo list
 gh pr create --fill-first --web
 gh repo create sample --public --clone --add-readme
 gh repo clone
+gh run view(実行中はgh run watch)
