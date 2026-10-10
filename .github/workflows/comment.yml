@@ -5,7 +5,10 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - run: gh pr comment "${GH_HEAD_REF}" --body "Hello, ${GH_AUTHOR}"
+      - uses: actions/checkout@v5
+      - run: gh pr comment "${GITHUB_HEAD_REF}" --body "Hello, ${GITHUB_AUTHOR}"
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_REPO: ${{ github.repository }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
