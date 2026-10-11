@@ -6,5 +6,5 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-      time: "16:23"
+      time: "16:39"
       timezone: "Asia/Tokyo"

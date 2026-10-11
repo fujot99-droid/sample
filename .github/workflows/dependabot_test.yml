@@ -1,0 +1,12 @@
+name: Dependabot Test
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v1
+        with:
+          go-version: "1.0"
+      - run: go version
