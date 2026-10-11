@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  build: # ジョブID
 
     runs-on: ubuntu-latest
 
