@@ -24,7 +24,7 @@ RUN go mod init example.com/hello && \
     CGO_ENABLED=0 go build -o /out/hello .
 
 # ===== 実行ステージ：小さなイメージに完成品だけをコピーする =====
-FROM alpine:3.20
+FROM alpine:3.24
 
 # ビルド時に --build-arg APP_VERSION=1.0 のように上書きできる
 ARG APP_VERSION=dev
