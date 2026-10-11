@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ===== ビルドステージ：Go のプログラムをコンパイルする =====
-FROM golang:1.23 AS builder
+FROM golang:1.25 AS builder
 WORKDIR /src
 
 # 別ファイルを用意しなくて済むよう、ソースコードを Dockerfile 内に直接書く
