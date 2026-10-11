@@ -4,6 +4,7 @@ updates:
     # github-actionsは固定
     directory: /
     schedule:
-      interval: "daily"
-      time: "14:20"
+      interval: "weekly"
+      day: "sunday"
+      time: "16:23"
       timezone: "Asia/Tokyo"
