@@ -2,7 +2,7 @@ name: Auto merge
 on: pull_request
 jobs:
   merge:
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}s
     runs-on: ubuntu-latest
     permissions:
       contents: write
