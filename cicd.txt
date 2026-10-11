@@ -194,3 +194,6 @@ repository-projects
 security-events
 statuses
 
+updatesキーへ指定できるのは、
+パッケージエコシステム
+bundler,cargo,composer,devcontainers,docker,elm,github-actions,gitsubmodule,gomod,gradle,maven,mix,npm,nuget,pip,pub,swift,terraform
