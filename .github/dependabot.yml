@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    # github-actionsは固定
+    directory: /
+    schedule:
+      interval: "daily"
+      time: "13:03"
+      timezone: "Asia/Tokyo"
